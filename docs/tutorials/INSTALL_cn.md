@@ -34,6 +34,9 @@ PaddleDetection 依赖 PaddlePaddle 版本关系：
 ### 1. 安装PaddlePaddle
 
 ```
+# CUDA11.2 or CUDA11.3
+python -m pip install paddlepaddle-gpu==2.2.2.post112 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
+
 # CUDA10.1
 python -m pip install paddlepaddle-gpu==2.2.0.post101 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
 
