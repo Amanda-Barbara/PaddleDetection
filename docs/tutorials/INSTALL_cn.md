@@ -121,3 +121,7 @@ python tools/infer.py -c configs/ppyolo/ppyolo_r50vd_dcn_1x_coco.yml -o use_gpu=
 结果如下图：
 
 ![](../images/000000014439.jpg)
+
+
+## 参考链接
+* 1 [paddlepaddle-gpu安装教程](https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation/docs/zh/install/pip/linux-pip.html)
