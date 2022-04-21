@@ -1,5 +1,5 @@
 _BASE_: [
-  '../datasets/coco_detection.yml',
+  '../datasets/roadsign_voc.yml',
   '../runtime.yml',
   './_base_/optimizer_300e.yml',
   './_base_/ppyoloe_crn.yml',
@@ -7,7 +7,7 @@ _BASE_: [
 ]
 
 log_iter: 100
-snapshot_epoch: 10
+snapshot_epoch: 1
 weights: output/ppyoloe_crn_s_300e_coco/model_final
 
 pretrain_weights: https://paddledet.bj.bcebos.com/models/pretrained/CSPResNetb_s_pretrained.pdparams
