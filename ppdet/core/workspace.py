@@ -59,8 +59,8 @@ class AttrDict(dict):
     """Single level attribute dict, NOT recursive"""
 
     def __init__(self, **kwargs):
-        super(AttrDict, self).__init__()
-        super(AttrDict, self).update(kwargs)
+        super(AttrDict, self).__init__() #继承dict父类的__init__()功能
+        super(AttrDict, self).update(kwargs) #把字典kwargs添加到初始化的AttrDict对象中
 
     def __getattr__(self, key):
         if key in self:
