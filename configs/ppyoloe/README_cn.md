@@ -43,6 +43,11 @@ PP-YOLOE由以下方法组成
 
 ### 训练
 
+使用单卡在voc数据集上训练ppyoloe_s模型
+```shell
+CUDA_VISIBLE_DEVICES=0 python tools/train.py -c configs/ppyoloe/ppyoloe_crn_s_300e_voc.yml --eval -r output/ppyoloe_crn_s_300e_voc/best_model
+```
+
 执行以下指令使用混合精度训练PP-YOLOE
 
 ```bash
