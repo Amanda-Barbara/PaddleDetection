@@ -108,7 +108,7 @@ class SchemaDict(dict):
         ]
 
     def mandatory(self):
-        return any([k for k in self.schema.keys() if not self.has_default(k)])
+        return any([k for k in self.schema.keys() if not self.has_default(k)]) #列表中只要有一个判断为真，则返回True
 
     def find_missing_keys(self):
         missing = [
