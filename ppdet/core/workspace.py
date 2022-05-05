@@ -76,7 +76,7 @@ BASE_KEY = '_BASE_'
 # parse and load _BASE_ recursively # 加载和解析`_BASE_`列表中的yaml配置文件并保存到`global_config`全局变量中
 def _load_config_with_base(file_path):
     with open(file_path) as f:
-        file_cfg = yaml.load(f, Loader=yaml.Loader)
+        file_cfg = yaml.load(f, Loader=yaml.Loader) #把代码中serializable(注册到yaml序列化与反序列化)的类实现由yaml对象到python对象的转化
 
     # NOTE: cfgs outside have higher priority than cfgs in _BASE_ (最外层的yaml文件相比`_BASE_`文件的配置变量具有更高的优先级)
     if BASE_KEY in file_cfg:
@@ -89,7 +89,7 @@ def _load_config_with_base(file_path):
                 base_yml = os.path.join(os.path.dirname(file_path), base_yml)
 
             with open(base_yml) as f:
-                base_cfg = _load_config_with_base(base_yml)
+                base_cfg = _load_config_with_base(base_yml) #把`file_cfg`作为结果返回给`base_cfg`
                 all_base_cfg = merge_config(base_cfg, all_base_cfg)
 
         del file_cfg[BASE_KEY]
