@@ -242,7 +242,7 @@ DarkNet_cfg = {53: ([1, 2, 8, 8, 4])}
 @register
 @serializable
 class DarkNet(nn.Layer):
-    __shared__ = ['norm_type', 'data_format']
+    __shared__ = ['norm_type', 'data_format'] # 类变量可以由类名直接调用，也可以有对象来调用
 
     def __init__(self,
                  depth=53,
