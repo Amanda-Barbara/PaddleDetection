@@ -73,12 +73,12 @@ global_config = AttrDict()
 BASE_KEY = '_BASE_'
 
 
-# parse and load _BASE_ recursively
+# parse and load _BASE_ recursively # 加载和解析`_BASE_`列表中的yaml配置文件并保存到`global_config`全局变量中
 def _load_config_with_base(file_path):
     with open(file_path) as f:
         file_cfg = yaml.load(f, Loader=yaml.Loader)
 
-    # NOTE: cfgs outside have higher priority than cfgs in _BASE_
+    # NOTE: cfgs outside have higher priority than cfgs in _BASE_ (最外层的yaml文件相比`_BASE_`文件的配置变量具有更高的优先级)
     if BASE_KEY in file_cfg:
         all_base_cfg = AttrDict()
         base_ymls = list(file_cfg[BASE_KEY])
