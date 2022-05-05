@@ -8,6 +8,13 @@
 2.  如果模块配置中未提供 `num_classes` ，但配置文件中存在全局键值，那么会使用全局键值。
 3.  两者均为配置的情况下，将使用默认值(`81`)。
 
+## 类对象可以在程序中添加自定义对象变量
+```text
+schema.pymodule = importlib.import_module(cls.__module__)
+schema.inject = getattr(cls, '__inject__', [])
+schema.shared = getattr(cls, '__shared__', [])
+```
+
 
 ## 参考链接
 * 1 [SharedConfig类解析](../../../static/docs/FAQ.md)

@@ -66,7 +66,7 @@ def _make_python_representer(cls):
 
     return python_representer
 
-
+# 通过yaml.add_constructor、yaml.add_representer分别向yaml注册cls类的序列化(load:yaml对象转为python对象)，反序列化(dump:python对象转为yaml对象)的功能表单
 def serializable(cls):
     """
     Add loader and dumper for given class, which must be
