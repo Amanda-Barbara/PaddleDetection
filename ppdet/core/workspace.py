@@ -179,7 +179,7 @@ def make_partial(cls):
             cls.__call__ = partial_apply
     return cls
 
-
+#
 def register(cls):
     """
     Register a given module class.
