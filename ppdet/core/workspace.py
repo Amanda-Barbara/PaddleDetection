@@ -133,7 +133,7 @@ def dict_merge(dct, merge_dct):
     for k, v in merge_dct.items():
         if (k in dct and isinstance(dct[k], dict) and
                 isinstance(merge_dct[k], collectionsAbc.Mapping)):
-            dict_merge(dct[k], merge_dct[k])
+            dict_merge(dct[k], merge_dct[k]) #如果dct[k]是字典对象那就执行递归遍历，直到dct[k]不再是字典对象为止
         else:
             dct[k] = merge_dct[k]
     return dct
