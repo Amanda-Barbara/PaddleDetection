@@ -89,7 +89,7 @@ def _load_config_with_base(file_path):
                 base_yml = os.path.join(os.path.dirname(file_path), base_yml)
 
             with open(base_yml) as f:
-                base_cfg = _load_config_with_base(base_yml) #把`file_cfg`作为结果返回给`base_cfg`
+                base_cfg = _load_config_with_base(base_yml) #递归遍历`base_yml`文件，把`file_cfg`作为结果返回给`base_cfg`，把解析的yaml文件中的变量更新到全局变量`global_config`中，
                 all_base_cfg = merge_config(base_cfg, all_base_cfg)
 
         del file_cfg[BASE_KEY]
