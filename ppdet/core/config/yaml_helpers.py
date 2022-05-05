@@ -38,7 +38,7 @@ def _make_python_constructor(cls):
         else:
             kwargs = loader.construct_mapping(node, deep=True)
             try:
-                return cls(**kwargs)
+                return cls(**kwargs) #初始化cls对象
             except Exception as ex:
                 print("Error when construct {} instance from yaml config".
                       format(cls.__name__))
