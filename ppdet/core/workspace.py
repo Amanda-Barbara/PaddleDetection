@@ -63,7 +63,7 @@ class AttrDict(dict):
         super(AttrDict, self).update(kwargs) #把字典kwargs添加到初始化的AttrDict对象中
 
     def __getattr__(self, key):
-        if key in self:
+        if key in self: #表示类实例化的对象
             return self[key]
         raise AttributeError("object has no attribute '{}'".format(key))
 
