@@ -149,7 +149,7 @@ def merge_config(config, another_cfg=None):
     Returns: global config
     """
     global global_config
-    dct = another_cfg or global_config
+    dct = another_cfg or global_config #直接赋值相当于对象的引用，两个对象则指向了共同的区域
     return dict_merge(dct, config)
 
 
