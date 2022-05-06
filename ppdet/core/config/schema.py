@@ -65,7 +65,7 @@ class SchemaDict(dict):
         # XXX also update regular dict to SchemaDict??
         if isinstance(value, dict) and key in self and isinstance(self[key],
                                                                   SchemaDict):
-            self[key].update(value)
+            self[key].update(value) #如果`value`是一个字典，则把键为`key`值为`value`的字典对象添加或者更新到全局变量`global_config`中。
         else:
             super(SchemaDict, self).__setitem__(key, value) #调用父类dict类型的__setitem__方法
 
