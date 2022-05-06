@@ -3,7 +3,7 @@ epoch: 300
 LearningRate:
   base_lr: 0.025
   schedulers:
-    - !CosineDecay
+    - !CosineDecay #`CosineDecay`经过`serializable`序列化与反序列化可以通过`yaml.load`方法对`CosineDecay`类进行初始化并作为关键字`schedulers`的列表成员
       max_epochs: 360
     - !LinearWarmup
       start_factor: 0.
