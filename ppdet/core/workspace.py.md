@@ -19,15 +19,16 @@ d1['four'] = 4
 sub3 = d1['thr']
 sub3['t'] = 8
 print(d1)
-sub4 = d1['four']
-sub4 = 9
+sub4 = d1['four'] #如果d1['four']只是一个普通变量，sub4则相当于深拷贝
+sub4 = 9 
 print(sub4)
+print(d1)
 ```
 执行结果
 ```text
-{'one': 1, 'two': 2, 'thr': {'t': 3}, 'four': 4}
 {'one': 1, 'two': 2, 'thr': {'t': 8}, 'four': 4}
 9
+{'one': 1, 'two': 2, 'thr': {'t': 8}, 'four': 4}
 ```
 
 ## 参考链接
