@@ -67,7 +67,7 @@ class SchemaDict(dict):
                                                                   SchemaDict):
             self[key].update(value)
         else:
-            super(SchemaDict, self).__setitem__(key, value)
+            super(SchemaDict, self).__setitem__(key, value) #调用父类dict类型的__setitem__方法
 
     def __missing__(self, key):
         if self.has_default(key):
