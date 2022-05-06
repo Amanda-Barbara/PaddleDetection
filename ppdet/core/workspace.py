@@ -135,7 +135,7 @@ def dict_merge(dct, merge_dct):
                 isinstance(merge_dct[k], collectionsAbc.Mapping)):
             dict_merge(dct[k], merge_dct[k]) #如果dct[k]是字典对象那就执行递归遍历更新dct，直到dct[k]不再是字典对象为止
         else:
-            dct[k] = merge_dct[k] #如果`SchemaDict`类型的对象为空则调用`SchemaDict`类的__setiterm__属性
+            dct[k] = merge_dct[k] #调用`SchemaDict`类的__setiterm__属性，来添加或者更新全局变量`global_config`中
     return dct
 
 
