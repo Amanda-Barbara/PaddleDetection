@@ -197,7 +197,7 @@ def register(cls):
     global_config[cls.__name__] = extract_schema(cls)
     return cls
 
-
+# 初始化`cls_or_name`类的实例
 def create(cls_or_name, **kwargs):
     """
     Create an instance of given module class.
